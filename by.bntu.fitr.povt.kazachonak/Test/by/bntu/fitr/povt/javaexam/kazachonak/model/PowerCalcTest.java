@@ -1,9 +1,7 @@
 package by.bntu.fitr.povt.javaexam.kazachonak.model;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.AfterClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -37,6 +35,4 @@ public class PowerCalcTest {
         assertEquals(expResult, rooms[1].toString());
          
     }
-    
-    
 }
