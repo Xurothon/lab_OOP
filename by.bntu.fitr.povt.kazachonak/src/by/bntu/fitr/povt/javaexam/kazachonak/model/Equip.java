@@ -1,11 +1,11 @@
 package by.bntu.fitr.povt.javaexam.kazachonak.model;
 
 public class Equip {
+
     private final int power;
     final String name;
-    
-        public Equip(String name, int power)
-    {
+
+    public Equip(String name, int power) {
         this.power = power;
         this.name = name;
     }

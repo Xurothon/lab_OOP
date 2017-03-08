@@ -2,14 +2,15 @@ package by.bntu.fitr.povt.javaexam.kazachonak.model.collection;
 
 import java.util.NoSuchElementException;
 
-public class Stack<T> extends AList<T>{
+public class Stack<T> extends AList<T> {
 
-    public Stack(){
+    public Stack() {
         first = null;
         n = 0;
     }
+
     @Override
-    public void push(T newObject){
+    public void push(T newObject) {
         Node oldfirst = first;
         first = new Node();
         first.newObject = newObject;
@@ -18,8 +19,8 @@ public class Stack<T> extends AList<T>{
     }
 
     @Override
-    public T pop(){
-        if (isEmpty()){
+    public T pop() {
+        if (isEmpty()) {
             throw new NoSuchElementException();
         }
         T item = first.newObject;
@@ -30,13 +31,13 @@ public class Stack<T> extends AList<T>{
     }
 
     @Override
-    public String toString(){
-        if (isEmpty()){
+    public String toString() {
+        if (isEmpty()) {
             return "StackList is empty";
         }
         StringBuilder s = new StringBuilder("\n");
         Node copyfirst = first;
-        while (copyfirst != null){
+        while (copyfirst != null) {
             s.append(copyfirst.newObject);
             s.append(", ");
             copyfirst = copyfirst.next;
@@ -44,4 +45,5 @@ public class Stack<T> extends AList<T>{
         s.replace(s.length() - 2, s.length(), "");
         return s.toString();
     }
+
 }
