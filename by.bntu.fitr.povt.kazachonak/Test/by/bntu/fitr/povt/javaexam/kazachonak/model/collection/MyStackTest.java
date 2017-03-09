@@ -1,22 +1,20 @@
 package by.bntu.fitr.povt.javaexam.kazachonak.model.collection;
 
+import by.bntu.fitr.povt.javaexam.kazachonak.model.Equip;
 import by.bntu.fitr.povt.javaexam.kazachonak.model.Radio;
 import org.junit.AfterClass;
-import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Ignore;
 
-public class QueueTest {
+public class MyStackTest {
 
-    private static Queue equip = null;
-
-    public QueueTest() {
-    }
+    private static MyStack<Equip> equip = null;
 
     @BeforeClass
-    public static void setUpClass() {
-        equip = new Queue();
+    public static void makeStack() {
+        equip = new MyStack<>();
         equip.push(new Radio(50, "bad sound."));
         equip.push(new Radio(100, "good sound."));
     }
@@ -29,8 +27,8 @@ public class QueueTest {
     @Test
     public void testPush() {
         System.out.println("push");
-        int size = 3;
-        equip.push(new Radio(40, "not sound"));
+        int size = 2;
+        equip.push(new Radio(40, "not sound."));
         assertEquals(size, equip.size());
     }
 
@@ -39,16 +37,27 @@ public class QueueTest {
         System.out.println("pop");
         int size = 1;
         equip.pop();
-
         assertEquals(size, equip.size());
     }
 
     @Test
     public void testToString() {
         System.out.println("toString");
-        String s = "\nBoing(capacity - 50, seats - 400), Boing(capacity - 50, seats - 400)";
-        System.out.println(equip.toString());
-        //assertEquals(s, airline.toString());
+        testPop();
+        String s = "\nRadio 50 volt and bad sound.";
+        assertEquals(s, equip.toString());
+    }
+    
+    @Ignore
+    @Test(timeout = 15000)
+    public void pushAndPopSpeed() {
+        System.out.println("pushAndPopSpeed");
+        for (int i = 0; i < 1_000_000_0; i++) {
+            equip.push(new Radio(50, "bad sound."));
+        }
+        for (int i = 0; i < equip.size(); i++) {
+            equip.pop();
+        }
     }
 
 }

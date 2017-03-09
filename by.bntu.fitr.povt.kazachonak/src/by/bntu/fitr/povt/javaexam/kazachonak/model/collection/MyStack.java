@@ -2,27 +2,19 @@ package by.bntu.fitr.povt.javaexam.kazachonak.model.collection;
 
 import java.util.NoSuchElementException;
 
-public class Queue<T> extends AList<T> {
+public class MyStack<T> extends AList<T> {
 
-    protected Node last;
-
-    public Queue() {
+    public MyStack() {
         first = null;
-        last = null;
         n = 0;
     }
 
     @Override
     public void push(T newObject) {
-        Node oldlast = last;
-        last = new Node();
-        last.newObject = newObject;
-        last.next = null;
-        if (isEmpty()) {
-            first = last;
-        } else {
-            oldlast.next = last;
-        }
+        Node oldfirst = first;
+        first = new Node();
+        first.newObject = newObject;
+        first.next = oldfirst;
         n++;
     }
 
@@ -34,9 +26,6 @@ public class Queue<T> extends AList<T> {
         T item = first.newObject;
         first = first.next;
         n--;
-        if (isEmpty()) {
-            last = null;
-        }
 
         return item;
     }
@@ -44,18 +33,17 @@ public class Queue<T> extends AList<T> {
     @Override
     public String toString() {
         if (isEmpty()) {
-            return "QueueList is empty";
+            return "StackList is empty";
         }
         StringBuilder s = new StringBuilder("\n");
-
         Node copyfirst = first;
-
         while (copyfirst != null) {
-            s.append(copyfirst.newObject).append(", ");
+            s.append(copyfirst.newObject);
+            s.append(", ");
             copyfirst = copyfirst.next;
         }
         s.replace(s.length() - 2, s.length(), "");
-
         return s.toString();
     }
+
 }

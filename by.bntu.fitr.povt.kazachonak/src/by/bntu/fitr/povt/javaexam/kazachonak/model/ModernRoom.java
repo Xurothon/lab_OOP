@@ -1,14 +1,14 @@
 package by.bntu.fitr.povt.javaexam.kazachonak.model;
 
 import by.bntu.fitr.povt.javaexam.kazachonak.model.collection.ICollection;
-import by.bntu.fitr.povt.javaexam.kazachonak.model.collection.Stack;
+import by.bntu.fitr.povt.javaexam.kazachonak.model.collection.MyStack;
 
 public class ModernRoom {
 
     private ICollection<Equip> modernRoom;
 
     public ModernRoom() {
-        modernRoom = new Stack<>();
+        modernRoom = new MyStack<>();
     }
 
     public ModernRoom(ICollection<Equip> other) {
