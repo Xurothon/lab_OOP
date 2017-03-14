@@ -2,7 +2,7 @@ package by.bntu.fitr.povt.javaexam.kazachonak.model.collection;
 
 import java.util.NoSuchElementException;
 
-public class MyStack<T> extends AList<T> {
+public class MyStack<T> extends MyList<T> {
 
     public MyStack() {
         first = null;

@@ -1,17 +1,17 @@
 package by.bntu.fitr.povt.javaexam.kazachonak.model;
 
-import by.bntu.fitr.povt.javaexam.kazachonak.model.collection.ICollection;
 import by.bntu.fitr.povt.javaexam.kazachonak.model.collection.MyStack;
+import by.bntu.fitr.povt.javaexam.kazachonak.model.collection.MyCollection;
 
 public class ModernRoom {
 
-    private ICollection<Equip> modernRoom;
+    private MyCollection<Equip> modernRoom;
 
     public ModernRoom() {
         modernRoom = new MyStack<>();
     }
 
-    public ModernRoom(ICollection<Equip> other) {
+    public ModernRoom(MyCollection<Equip> other) {
         modernRoom = other;
     }
 
@@ -30,18 +30,5 @@ public class ModernRoom {
     public Equip peek() {
         return modernRoom.peek();
     }
-
-//    public Equip[] toArray() {
-//        return modernRoom.toArray(new Equip[modernRoom.size()]);
-//    }
-//
-//   public String toString() {
-//        Node temp = head;
-//        StringBuilder str = new StringBuilder("Queue: ").append("\n");
-//        while (null != temp) {
-//            str.append(temp.toString()).append("\n");
-//            temp = temp.next;
-//        }
-//        return str.toString();
 
 }

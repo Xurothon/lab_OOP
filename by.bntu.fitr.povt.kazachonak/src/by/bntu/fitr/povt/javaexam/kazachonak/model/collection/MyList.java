@@ -3,7 +3,7 @@ package by.bntu.fitr.povt.javaexam.kazachonak.model.collection;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-abstract class AList<T> implements ICollection<T> {
+abstract class MyList<T> implements MyCollection<T> {
 
     protected int n;
     protected Node first;
@@ -14,6 +14,7 @@ abstract class AList<T> implements ICollection<T> {
         protected Node next;
     }
 
+    @Override
     public int size() {
         return n;
     }

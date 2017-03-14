@@ -2,15 +2,15 @@ package by.bntu.fitr.povt.javaexam.kazachonak.model.collection;
 
 import java.util.NoSuchElementException;
 
-public class MyQueue<T> extends AList<T> {
+public class MyQueue<T> extends MyList<T> {
 
     protected Node last;
 
     public MyQueue() {
         first = null;
         last = null;
-        n = 0;
-    }
+        n = 0; 
+   }
 
     @Override
     public void push(T newObject) {
