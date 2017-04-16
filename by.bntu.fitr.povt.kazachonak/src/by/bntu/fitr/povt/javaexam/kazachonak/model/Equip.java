@@ -12,10 +12,10 @@ public class Equip {
 
     @Override
     public String toString() {
-        return name + "\tPower of equipment: " + power + " volt";
+        return name + " power: " + power + " volt";
     }
 
-    public int getEquip() {
+    public int getPower() {
         return power;
     }
 

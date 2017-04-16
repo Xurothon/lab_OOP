@@ -1,9 +1,13 @@
 package by.bntu.fitr.povt.javaexam.kazachonak.model.collection;
 
+import java.util.AbstractCollection;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-abstract class MyList<T> implements MyCollection<T> {
+public abstract class MyList<T> extends AbstractCollection<T> implements MyCollection<T> {
+
+    protected MyList() {
+    }
 
     protected int n;
     protected Node first;
@@ -19,10 +23,12 @@ abstract class MyList<T> implements MyCollection<T> {
         return n;
     }
 
+    @Override
     public boolean isEmpty() {
         return first == null;
     }
 
+    @Override
     public void clear() {
         first = null;
     }
@@ -33,6 +39,23 @@ abstract class MyList<T> implements MyCollection<T> {
             throw new NoSuchElementException();
         }
         return first.newObject;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder s = new StringBuilder();
+        Node copyfirst = first;
+        while (copyfirst != null) {
+            s.append(copyfirst.newObject).append(", ");
+            copyfirst = copyfirst.next;
+        }
+        s.replace(s.length() - 2, s.length(), "");
+        return s.toString();
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new Itr();
     }
 
     private class Itr implements Iterator<T> {

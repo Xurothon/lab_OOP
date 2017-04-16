@@ -9,8 +9,8 @@ public class MyQueue<T> extends MyList<T> {
     public MyQueue() {
         first = null;
         last = null;
-        n = 0; 
-   }
+        n = 0;
+    }
 
     @Override
     public void push(T newObject) {
@@ -37,25 +37,6 @@ public class MyQueue<T> extends MyList<T> {
         if (isEmpty()) {
             last = null;
         }
-
         return item;
-    }
-
-    @Override
-    public String toString() {
-        if (isEmpty()) {
-            return "QueueList is empty";
-        }
-        StringBuilder s = new StringBuilder("\n");
-
-        Node copyfirst = first;
-
-        while (copyfirst != null) {
-            s.append(copyfirst.newObject).append(", ");
-            copyfirst = copyfirst.next;
-        }
-        s.replace(s.length() - 2, s.length(), "");
-
-        return s.toString();
     }
 }

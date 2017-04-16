@@ -25,15 +25,13 @@ public class MyQueueTest {
 
     @Test
     public void testPush() {
-        System.out.println("push");
-        int size = 3;
+        int size = 2;
         equip.push(new Radio(40, "not sound."));
         assertEquals(size, equip.size());
     }
 
     @Test
     public void testPop() {
-        System.out.println("pop");
         int size = 1;
         equip.pop();
         assertEquals(size, equip.size());
@@ -41,9 +39,8 @@ public class MyQueueTest {
 
     @Test
     public void testToString() {
-        System.out.println("toString");
         testPop();
-        String s = "\nRadio 50 volt and bad sound.";
+        String s = "Radio 40 volt and not sound.";
         assertEquals(s, equip.toString());
     }
 

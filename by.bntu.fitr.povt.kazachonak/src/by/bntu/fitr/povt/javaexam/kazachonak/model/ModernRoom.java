@@ -1,34 +1,78 @@
 package by.bntu.fitr.povt.javaexam.kazachonak.model;
 
-import by.bntu.fitr.povt.javaexam.kazachonak.model.collection.MyStack;
-import by.bntu.fitr.povt.javaexam.kazachonak.model.collection.MyCollection;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 
-public class ModernRoom {
+public class ModernRoom implements Iterable<Equip> {
 
-    private MyCollection<Equip> modernRoom;
+    private final List<Equip> modernRoom;
 
     public ModernRoom() {
-        modernRoom = new MyStack<>();
+        modernRoom = new LinkedList<>();
     }
 
-    public ModernRoom(MyCollection<Equip> other) {
+    public ModernRoom(List<Equip> other) {
         modernRoom = other;
     }
 
-    public void push(Equip equip) {
-        modernRoom.push(equip);
+    public void add(Equip equip) {
+        modernRoom.add(equip);
     }
 
-//    public void clear() {
-//        modernRoom.clear();
-//    }
-
-    public Equip pop() {
-        return modernRoom.pop();
+    public Equip get(int index) {
+        return modernRoom.get(index);
     }
 
-    public Equip peek() {
-        return modernRoom.peek();
+    public List<Equip> getList() {
+        return modernRoom;
     }
 
+    public Equip remove(int index) {
+        return modernRoom.remove(index);
+    }
+
+    public void clear() {
+        modernRoom.clear();
+    }
+
+    public int size() {
+        return modernRoom.size();
+    }
+
+    public Equip[] toArray() {
+        return modernRoom.toArray(new Equip[modernRoom.size()]);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder s = new StringBuilder();
+        for (Equip equip : modernRoom) {
+            s.append(equip).append(", ");
+        }
+        s.replace(s.length() - 2, s.length(), "");
+        return s.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ModernRoom)) {
+            return false;
+        }
+        ModernRoom modernRoom1 = (ModernRoom) o;
+        return modernRoom != null ? modernRoom.equals(modernRoom1.modernRoom) : modernRoom1.modernRoom == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return modernRoom != null ? modernRoom.hashCode() : 0;
+    }
+
+    @Override
+    public Iterator<Equip> iterator() {
+        return modernRoom.iterator();
+    }
 }

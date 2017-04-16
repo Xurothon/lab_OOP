@@ -11,6 +11,6 @@ public class Radio extends Equip {
 
     @Override
     public String toString() {
-        return name + " " + super.getEquip() + " volt and " + other;
+        return name + " " + super.getPower() + " volt and " + other;
     }
 }

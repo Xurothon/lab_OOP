@@ -1,13 +1,15 @@
 package by.bntu.fitr.povt.javaexam.kazachonak.model.collection;
 
-public interface MyCollection<T> {
+import java.util.Collection;
+
+public interface MyCollection<T> extends Collection<T>{
 
     void push(T newObject);
 
     T pop();
 
     T peek();
-    
-    int size();
 
+    @Override
+    int size();
 }

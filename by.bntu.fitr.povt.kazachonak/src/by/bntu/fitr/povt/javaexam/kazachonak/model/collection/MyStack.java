@@ -29,21 +29,4 @@ public class MyStack<T> extends MyList<T> {
 
         return item;
     }
-
-    @Override
-    public String toString() {
-        if (isEmpty()) {
-            return "StackList is empty";
-        }
-        StringBuilder s = new StringBuilder("\n");
-        Node copyfirst = first;
-        while (copyfirst != null) {
-            s.append(copyfirst.newObject);
-            s.append(", ");
-            copyfirst = copyfirst.next;
-        }
-        s.replace(s.length() - 2, s.length(), "");
-        return s.toString();
-    }
-
 }
