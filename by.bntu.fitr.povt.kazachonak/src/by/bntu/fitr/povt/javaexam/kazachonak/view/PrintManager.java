@@ -9,7 +9,7 @@ public class PrintManager {
 
     static {
         PrintManager.add("Console", new ConsolePrint());
-        PrintManager.add("File", new FilePrint("data/outputfile.txt"));
+        PrintManager.add("File", new FilePrint("D:\\outputfile.txt"));
     }
 
     public static Printable get(String key) {

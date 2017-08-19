@@ -48,7 +48,7 @@ public class ModernRoom implements Iterable<Equip> {
     public String toString() {
         StringBuilder s = new StringBuilder();
         for (Equip equip : modernRoom) {
-            s.append(equip).append(", ");
+            s.append(equip).append("\n");
         }
         s.replace(s.length() - 2, s.length(), "");
         return s.toString();

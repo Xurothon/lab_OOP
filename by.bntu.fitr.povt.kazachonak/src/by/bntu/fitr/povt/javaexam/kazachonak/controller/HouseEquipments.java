@@ -13,13 +13,23 @@ public class HouseEquipments {
     public static void main(String[] args) {
         ModernRoom modernRoom = new ModernRoom();
         NewUtil.createEquip(modernRoom, 3);
-        System.out.println(modernRoom);
+        Printable view = PrintManager.get("Console");
+        view.print(modernRoom);
+        view.print("\n");
         int power = PowerCalc.calcPower(modernRoom);
-        System.out.println("All power: " + power);
+        view.print("All power: ");
+        view.print(power);
+        view.print("\n");
+        view.print("Sort_by_power_DESC");
+        view.print("\n");
         Sorter.sort(modernRoom, Sorter.TypeSort.BY_POWER_DESC);
         System.out.println(modernRoom);
-        
-        Printable view = PrintManager.get("File");
+        view.print("Log4j - D:\\\\test.log");
+        view.print("\n");
+        view.print("FileOutput - D:\\outputfile.txt");
+        view.print("\n");
+        view = PrintManager.get("File");
         view.print(modernRoom);
+        
     }
 }
